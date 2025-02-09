@@ -1,10 +1,13 @@
 <script setup lang="ts">
-import { Head } from '@inertiajs/vue3'
+import { Iconoir } from '@iconoir/vue';
+import { Head } from '@inertiajs/vue3';
 </script>
 
 <template>
 
   <Head title="Homepage"></Head>
 
-  <p>Hello, world!</p>
+  <Button>Create</Button>
+  <Iconoir height="36" width="36" />
+
 </template>

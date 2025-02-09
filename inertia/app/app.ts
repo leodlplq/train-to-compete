@@ -3,8 +3,11 @@
 
 import { resolvePageComponent } from '@adonisjs/inertia/helpers'
 import { createInertiaApp } from '@inertiajs/vue3'
+
+import PrimeVue from 'primevue/config'
 import type { DefineComponent } from 'vue'
 import { createApp, h } from 'vue'
+import { CustomPreset } from '~/plugins/primevue_preset'
 import '~/styles/style.scss'
 
 const appName = import.meta.env.VITE_APP_NAME || 'AdonisJS'
@@ -23,6 +26,11 @@ createInertiaApp({
 
   setup({ el, App, props, plugin }) {
     createApp({ render: () => h(App, props) })
+      .use(PrimeVue, {
+        theme: {
+          preset: CustomPreset,
+        },
+      })
       .use(plugin)
       .mount(el)
   },
